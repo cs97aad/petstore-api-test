@@ -1,0 +1,5 @@
+application/cache
+/.gradle/
+/.idea/
+/build/
+/target/
