@@ -6,8 +6,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import java.util.Properties;
+import lombok.extern.slf4j.Slf4j;
 
 
+@Slf4j
 public class FindPetsByStatusSteps {
 
 
@@ -19,7 +22,11 @@ public class FindPetsByStatusSteps {
     @When("the response status code is equal to {int}")
     public void theResponseStatusCodeIsEqualTo(int statusCode) {
         System.out.println("Expected status code " + statusCode);
+        log.info("Using loggger- Expected status code " + statusCode);
+
         System.out.println("Actual status code " + FindByStatus.getStatusCode());
+        log.info("Using loggger-Actual status code " + FindByStatus.getStatusCode());
+
         Assert.assertEquals(statusCode,FindByStatus.getStatusCode());
 
     }
